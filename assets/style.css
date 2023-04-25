@@ -1,0 +1,105 @@
+*{
+    margin:0;
+}
+body{
+    margin:0;
+    padding-top:0;
+}
+.test-1{
+    display: flex;
+    color:white;
+    font-family:'Courier New', monospace;
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    min-height:100vh;
+    /* width:100%; */
+    height:auto;
+    justify-content: center;
+}
+.mainPage{
+    display: flex;
+    flex-direction: column;
+    height:auto;
+    width:1000px;    
+    background-color: #051226ac;
+    padding: 50px;
+}
+#mainHeader{
+}
+#graph{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding:20px;
+    background-color: rgba(0, 0, 0, 0.136);
+}
+#output2{
+    width:300px;
+    background-color: #0512265e;
+}
+
+
+/* from dash import Dash, dcc, html
+from dash.dependencies import Input, Output
+import pandas as pd
+import plotly.express as px
+#pip install dash
+#pip install dash-core-components
+
+#csv data
+df = pd.read_csv("mydata.csv")
+
+#graph data
+iris_df = px.data.iris()
+f = px.scatter(iris_df,x="sepal_width",y="sepal_length",height=350,width=700)
+
+#initialize empty app
+app =  Dash(__name__)
+#create a layout
+app.layout = html.Div(
+    children=[
+        html.H1("Cracov University of Technology - introduction do dash",style={"color":"black"}),
+        dcc.Dropdown(id="input",
+            options=[
+                {"label": "Category A", "value": "A"},
+                {"label": "Category B", "value": "B"},
+                {"label": "Category C", "value": "C"}
+            ],
+            value="A",
+        ),
+        html.Div(id="output", children=["jello"]),
+        dcc.Graph(figure=f),
+    ],
+    style={"color":"white",
+           "font-family":"'Courier New', monospace",
+           "background-image": "linear-gradient(to right, #6a11cb 0%, #2575fc 100%)",
+           "min-height":"100vh",
+           "height":"100%",
+           "width":"100wv",
+           "margin":-10,
+           "margin-top":-20,
+           "padding":20}
+)
+
+# @app.callback(
+#     Output('output','children'),
+#     [Input('input','value')]
+# )
+@app.callback(
+    Output(component_id='output',component_property='children'),
+    [Input(component_id='input',component_property='value')]
+)
+def update_layout(value):
+    ## Filtering data
+    filtered_df = df[df["category"]==value]
+    filtered_df = filtered_df.groupby("category").mean()
+
+    ## Extracting mean value
+    a = round(filtered_df['value1'][0],2)
+    # print(type(filtered_df))                  panda DataFrame
+    # print(type(filtered_df['value1']))        panda Series
+    # print(type(filtered_df['value1'][0]))     float64
+    return html.H2(f"For {value} category mean evaluates to: {a}")
+
+if __name__ == '__main__':
+    app.run_server(debug="True") */
